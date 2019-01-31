@@ -8,11 +8,17 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            PosicaoXadrez pos = new PosicaoXadrez('c', 7);
+            try {
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-            Console.WriteLine(pos);
+                Tela.imprimirTabuleiro(partida.Tab);
 
-            Console.WriteLine(pos.ToPosicao());
+        
+            }
+            catch(TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
     }
